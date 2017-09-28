@@ -11,20 +11,20 @@ istream& read(istream&, Person&);
 struct Person
 {
     Person() = default;
-    Person(const string sname, const string saddr):
+    Person(const string& sname, const string& saddr):
         name(sname), address(saddr) { }
+    Person(istream& is) {read(is, *this);}
 
     string name;
     string address;
 
-    string& getName() const {
+    string getName() const {
         return name;
     }
-    string& getAddress() const {
+    string getAddress() const {
         return address;
     }
 };
-
 istream& read(istream& is, Person& item) {
     is >> item.name >> item.address;
     return is;
