@@ -11,7 +11,8 @@ void reset(int &ip1, int &ip2) {
 
 int main()
 {
-    int a1 = 23, a2 = 42;
+    int a1 = 23;
+    int a2 = 42;
     reset(a1, a2);
     cout << a1 << ' ' << a2 << endl;
     return 0;
