@@ -20,6 +20,11 @@ void printPara(const int ia[], size_t size) {
         cout << ia[i] << endl;
 }
 
+//使用引用
+void printr(int (&arr)[5]) {
+    for (auto a : arr)
+        cout << a << endl;
+}
 
 int main()
 {
@@ -27,5 +32,6 @@ int main()
     printC(n);
     printSTL(begin(n), end(n));
     printPara(n, end(n) - begin(n));
+    printr(n);
     return 0;
 }
