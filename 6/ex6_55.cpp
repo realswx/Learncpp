@@ -3,23 +3,22 @@
 using namespace std;
 typedef int fun(int, int);
 
-int sum(int a, int b)
-{
+int sum(int a, int b) {
     return a + b;
 }
-int reduce(int a, int b)
-{
+
+int reduce(int a, int b) {
     if(a >= b)
         return a - b;
     else
         return b - a;
 }
-int ride(int a, int b)
-{
+
+int ride(int a, int b) {
     return a * b;
 }
-int divide(int a, int b)
-{
+
+int divide(int a, int b) {
     return a / b;
 }
 int main()
