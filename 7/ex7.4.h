@@ -1,14 +1,19 @@
 #ifndef EX7_4_H_INCLUDED
 #define EX7_4_H_INCLUDED
-
 #include<string>
-using namespace std;
 
 class Person
 {
-    string name;
-    string address;
-};
+    std::string name;
+    std::string address;
 
+public:
+    std::string &getName() const {
+        return name;
+    }
+    std::string &getAddress() const {
+        return address;
+    }
+};
 
 #endif // EX7_4_H_INCLUDED

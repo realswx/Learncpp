@@ -14,16 +14,17 @@ int main()
             }
             else {
                 cout << total.bookNo << " " << total.units_sold << " "
-                << total.revenue << endl;
+                     << total.revenue << endl;
                 total = trans;
             }
         }
         cout << total.bookNo << " " << total.units_sold << " "
-        << total.revenue << endl;
+                 << total.revenue << endl;
     }
     else {
-        cerr << "No data?" << endl;
+        cout << "No Data ?" << endl;
         return -1;
     }
     return 0;
 }
+

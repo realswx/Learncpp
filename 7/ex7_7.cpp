@@ -7,17 +7,19 @@ int main()
     if (read(cin, total)) {
         Sales_data trans;
         while (read(cin, trans)) {
-            if (trans.isbn() == total.isbn())
+            if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {
-                print(cout, total) << endl;
+                print(cout, total);
+                cout << endl;
                 total = trans;
             }
         }
-        print(cout, total) << endl;
+        print(cout, total);
+        cout << endl;
     }
     else {
-        cerr << "No data?" << endl;
+        cerr << "No Data?" << endl;
         return -1;
     }
     return 0;

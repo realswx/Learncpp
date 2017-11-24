@@ -2,24 +2,27 @@
 #define EX7_2_H_INCLUDED
 
 #include<string>
-struct Sales_data
+
+class Sales_data
 {
-    std::string isbn() const
-    {
+public:
+    Sales_data &combine(const Sales_data &rhs);
+    std::string isbn() const {
         return bookNo;
     }
-    Sales_data& combine(const Sales_data&);
 
+public:
     std::string bookNo;
-    unsigned units_sold = 0;
-    double revenue = 0.0;
+    unsigned units_sold = 0.0;
+    double revenue = 0;
 };
 
-Sales_data& Sales_data::combine(const Sales_data& rhs) {
+Sales_data &Sales_data::combine(const Sales_data &rhs) {
     units_sold += rhs.units_sold;
     revenue += rhs.revenue;
     return *this;
 }
+
 
 
 #endif // EX7_2_H_INCLUDED
