@@ -2,12 +2,11 @@
 #define EX7_4_H_INCLUDED
 #include<string>
 
-class Person
+struct Person
 {
     std::string name;
     std::string address;
 
-public:
     std::string &getName() const {
         return name;
     }

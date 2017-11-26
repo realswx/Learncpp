@@ -5,18 +5,18 @@
 #include<string>
 using namespace std;
 
-struct Person;
-istream& read(istream&, Person&);
+class Person;
+istream &read(istream &, Person &);
 
-struct Person
+class Person
 {
+public:
     Person() = default;
-    Person(const string& sname, const string& saddr):
-        name(sname), address(saddr) { }
-    Person(istream& is) {read(is, *this);}
-
-    string name;
-    string address;
+    Person(const string n, const string a) :
+        name(n), address(a) { }
+    Person(istream &is) {
+        read(is, *this);
+    }
 
     string getName() const {
         return name;
@@ -24,14 +24,21 @@ struct Person
     string getAddress() const {
         return address;
     }
+
+private:
+    string name;
+    string address;
 };
-istream& read(istream& is, Person& item) {
+
+istream &read(istream &is, Person &item) {
     is >> item.name >> item.address;
     return is;
 }
-ostream& print(ostream& os, const Person& item) {
+
+ostream &print(ostream &os, Person &item) {
     os << item.name << " " << item.address;
     return os;
 }
+
 
 #endif // EX7_15_H_INCLUDED

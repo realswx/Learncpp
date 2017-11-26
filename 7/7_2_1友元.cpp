@@ -1,27 +1,38 @@
-#ifndef EX7_12_H_INCLUDED
-#define EX7_12_H_INCLUDED
+#ifndef 7_2_1сят╙_CPP_INCLUDED
+#define 7_2_1сят╙_CPP_INCLUDED
 
 #include<string>
 #include<iostream>
 using namespace std;
 
-struct Sales_data;
+class Sales_data;
 istream& read(istream &, Sales_data &);
 
-struct Sales_data
+class Sales_data
 {
+    friend Sales_data add(const Sales_data &, const Sales_data &);
+    friend istream &read(istream &is, Sales_data &);
+    friend ostream &print(ostream &os, const Sales_data &)
+
+public:
     Sales_data() = default;
-    Sales_data(const string &b) : bookNo(b) { }
-    Sales_data(const string &b, unsigned u, double r):
-        bookNo(b), units_sold(u), revenue(r * u) { }
-    Sales_data(istream &is) { read(is, *this); }
+    Sales_data(const string &b) :
+        bookNo(b) { }
+    Sales_data(const string &b, unsigned u, double r) :
+        bookNo(b), units_sold(u), revenue(r) { }
+    string isbn() const {
+        return bookNo;
+    }
+    Sales_data(istream &is);
+    Sales_data &combine(Sales_data &);
 
-    string isbn() const { return bookNo; };
-    Sales_data &combine(const Sales_data&);
-
+private:
     string bookNo;
     unsigned units_sold = 0;
-    double revenue= 0.0;
+    double revenue = 0.0;
+    double avg_price() const {
+        return units_sold ? (revenue / units_sold) : 0;
+    }
 };
 
 Sales_data& Sales_data::combine(const Sales_data &rhs) {
@@ -48,4 +59,4 @@ Sales_data add(const Sales_data& lhs, const Sales_data& rhs) {
     return sum;
 }
 
-#endif // EX7_12_H_INCLUDED
+#endif // 7_2_1сят╙_CPP_INCLUDED
