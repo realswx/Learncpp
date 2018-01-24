@@ -3,23 +3,22 @@
 
 #include<string>
 #include<iostream>
-using namespace std;
 
 struct Sales_data;
-istream& read(istream &, Sales_data &);
+std::istream& read(std::istream &, Sales_data &);
 
 struct Sales_data
 {
     Sales_data() = default;
-    Sales_data(const string &b) : bookNo(b) { }
-    Sales_data(const string &b, unsigned u, double r):
+    Sales_data(const std::string &b) : bookNo(b) { }
+    Sales_data(const std::string &b, unsigned u, double r):
         bookNo(b), units_sold(u), revenue(r * u) { }
-    Sales_data(istream &is) { read(is, *this); }
+    Sales_data(std::istream &is) { read(is, *this); }
 
-    string isbn() const { return bookNo; };
+    std::string isbn() const { return bookNo; };
     Sales_data &combine(const Sales_data&);
 
-    string bookNo;
+    std::string bookNo;
     unsigned units_sold = 0;
     double revenue= 0.0;
 };
@@ -30,14 +29,14 @@ Sales_data& Sales_data::combine(const Sales_data &rhs) {
     return *this;
 }
 
-istream& read(istream& is, Sales_data& item) {
+std::istream& read(std::istream& is, Sales_data& item) {
     double price = 0.0;
     is >> item.bookNo >> item.units_sold >> price;
     item.revenue = item.units_sold * price;
     return is;
 }
 
-ostream& print(ostream& os, Sales_data& item) {
+std::ostream& print(std::ostream& os, Sales_data& item) {
     os << item.isbn() << " " << item.units_sold << " " << item.revenue;
     return os;
 }

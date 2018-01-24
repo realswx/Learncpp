@@ -3,18 +3,17 @@
 
 #include<iostream>
 #include<string>
-using namespace std;
 
 class Sales_data
 {
 public:
-    string bookNo;
+    std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
 
 public:
     Sales_data &combine(const Sales_data &);
-    string const &isbn() const {
+    std::string const &isbn() const {
         return bookNo;
     }
     double avg_price() const;
@@ -26,14 +25,14 @@ Sales_data &Sales_data::combine(const Sales_data &rhs) {
     return *this;
 }
 
-istream &read(istream &is, Sales_data &item) {
+std::istream &read(std::istream &is, Sales_data &item) {
     double price = 0;
     is >> item.bookNo >> item.units_sold >> price;
     item.revenue = price * item.units_sold;
     return is;
 }
 
-ostream &print(ostream &os, const Sales_data &item) {
+std::ostream &print(std::ostream &os, const Sales_data &item) {
     os << item.isbn() << " " << item.units_sold << " "
        << item.revenue << " " << item.avg_price();
     return os;

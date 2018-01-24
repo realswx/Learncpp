@@ -3,24 +3,23 @@
 
 #include<iostream>
 #include<string>
-using namespace std;
 
 class Sales_data
 {
 public:
     Sales_data() = default;
-    Sales_data(const string &b) :
+    Sales_data(const std::string &b) :
         bookNo(b) { }
-    Sales_data(const string &b, unsigned u, double r) :
+    Sales_data(const std::string &b, unsigned u, double r) :
         bookNo(b), units_sold(u), revenue(r) { }
-    Sales_data(istream &);
+    Sales_data(std::istream &);
 
-    string const& isbn() const {
+    std::string const &isbn() const {
         return bookNo;
     };
-    Sales_data& combine(const Sales_data&);
+    Sales_data &combine(const Sales_data &);
 
-    string bookNo;
+    std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
 };
@@ -31,14 +30,14 @@ Sales_data &Sales_data::combine(const Sales_data& rhs) {
     return *this;
 }
 
-istream &read(istream &is,Sales_data &item) {
+std::istream &read(std::istream &is,Sales_data &item) {
     double price = 0;
     is >> item.bookNo >> item.units_sold >> price;
     item.revenue = price * item.units_sold;
     return is;
 }
 
-ostream& print(ostream& os, const Sales_data& item) {
+std::ostream& print(std::ostream& os, const Sales_data& item) {
     os << item.isbn() << " " << item.units_sold << " " <<item.revenue;
     return os;
 }
@@ -49,7 +48,7 @@ Sales_data add(const Sales_data& lhs, const Sales_data& rhs) {
     return sum;
 }
 
-Sales_data::Sales_data(istream &is) {
+Sales_data::Sales_data(std::istream &is) {
     read(is, *this);
 }
 

@@ -3,31 +3,30 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
 
 class Person
 {
-    string name;
-    string address;
+    std::string name;
+    std::string address;
 
 public:
-    const string &getName() const {
+    const std::string &getName() const {
         return name;
     }
-    const string &getAddress() const {
+    const std::string &getAddress() const {
         return address;
     }
 
 };
 
-istream &read(istream &is, Person &person) {
+std::istream &read(std::istream &is, Person &person) {
     is >> person.name >> person.address;
     if (!is)
         person = Person();
     return is;
 }
 
-ostream &print(ostream &os, const Person &person) {
+std::ostream &print(std::ostream &os, const Person &person) {
     os << person.name << person.address;
     return os;
 }

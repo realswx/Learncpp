@@ -2,18 +2,17 @@
 #define EX7_5_H_INCLUDED
 
 #include<string>
-using namespace std;
 
 class Person
 {
-    string name;
-    string address;
+    std::string name;
+    std::string address;
 
 public:
-    string& getName() const {
+    std::string &getName() const {
         return name;
     }
-    string& getAddress() const {
+    std::string &getAddress() const {
         return address;
     }
 };

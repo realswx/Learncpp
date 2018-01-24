@@ -5,18 +5,18 @@ class Sales_data
 {
 public:
     Sales_data() = default;
-    Sales_data(const string &b) :
+    Sales_data(const std::string &b) :
         bookNo(b) { }
-    Sales_data(const string &b, unsigned u, double r) :
+    Sales_data(const std::string &b, unsigned u, double r) :
         bookNo(b), units_sold(u), revenue(r) { }
-    string isbn() const {
+    std::string isbn() const {
         return bookNo;
     }
-    Sales_data(istream &is);
+    Sales_data(std::istream &is);
     Sales_data &combine(Sales_data &);
 
 private:
-    string bookNo;
+    std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
     double avg_price() const {
