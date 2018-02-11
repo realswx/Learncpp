@@ -4,7 +4,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void fac() {
+void fac()
+{
     int val;
     cout << "input a number(>0): ";
     cin >> val;

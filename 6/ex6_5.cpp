@@ -4,7 +4,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-int abs(int val) {
+int abs(int val)
+{
     return val >=0 ? val : -val;
 }
 

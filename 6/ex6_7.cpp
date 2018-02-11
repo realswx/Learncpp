@@ -4,7 +4,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-size_t count_calls() {
+size_t count_calls()
+{
     static size_t ctr = 0;
     return ++ctr;
 }

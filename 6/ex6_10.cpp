@@ -1,8 +1,11 @@
 #include<iostream>
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
-void reset(int *ip1, int *ip2) {
+void swap(int *ip1, int *ip2)
+{
     int temp;
     temp = *ip1;
     *ip1 = *ip2;
@@ -11,8 +14,10 @@ void reset(int *ip1, int *ip2) {
 
 int main()
 {
-    int a1 = 23, a2 = 42;
-    reset(&a1, &a2);
-    cout << a1 << ' ' << a2 << endl;
+    int a, b;
+    cout << "input two number(a and b): ";
+    cin >> a >> b;
+    swap(&a, &b);
+    cout << "result: a=" << a << " b=" << b << endl;
     return 0;
 }
