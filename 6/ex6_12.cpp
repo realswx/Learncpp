@@ -1,8 +1,10 @@
 #include<iostream>
 
-using namespace std;
+using std::cout;
+using std::endl
 
-void reset(int &ip1, int &ip2) {
+void reset(int &ip1, int &ip2)
+{
     int temp;
     temp = ip1;
     ip1 = ip2;

@@ -1,15 +1,20 @@
 #include<iostream>
+#include<string>
 
-using namespace std;
+using std::string;
+using std::cout;
+using std::endl;
 
-bool hasUppercase(const string &s) {
+bool hasUppercase(const string &s)
+{
     for (auto c : s)
         if (isupper(c))
             return true;
     return false;
 }
 
-void toLowercase(string &s) {
+void toLowercase(string &s)
+{
     for (auto &c : s)
         if (isupper(c))
             c = tolower(c);
@@ -17,9 +22,12 @@ void toLowercase(string &s) {
 
 int main()
 {
-    string s("heLlo my Friend");
-    bool flag = hasUppercase(s);
-    cout << flag << endl;
+    string s("hello Darkness");
+    cout << s << endl;
+    if (hasUppercase(s))
+        cout << "It has uppercase." << endl;
+    else
+        cout << "It does not have uppercase." << endl;
     toLowercase(s);
     cout << s << endl;
     return 0;

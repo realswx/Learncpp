@@ -1,8 +1,10 @@
 #include<iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
-void reset(int &i) {
+void reset(int &i)
+{
     i = 0;
 }
 
