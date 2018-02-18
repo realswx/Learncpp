@@ -1,9 +1,12 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
 
-char &get_val(string &str, string::size_type ix) {
+char &get_val(string &str, string::size_type ix)
+{
     return str[ix];
 }
 

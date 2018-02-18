@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void putsum(initializer_list<int> il) {
+void putsum(initializer_list<int> il)
+{
     int sum = 0;
     for (auto beg = il.begin(); beg != il.end(); ++beg)
         sum += *beg;
