@@ -2,7 +2,8 @@
 
 using namespace std;
 
-decltype(odd) *arrPtr(int i) {
+decltype(odd) *arrPtr(int i)
+{
     return (i % 2) ? &odd : &even;
 }
 

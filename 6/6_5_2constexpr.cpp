@@ -1,5 +1,8 @@
 #include<iostream>
-using namespace std;
+
+using std::cout;
+using std::endl;
+
 constexpr int new_sz()
 {
     return 42;

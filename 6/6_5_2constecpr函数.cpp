@@ -1,12 +1,15 @@
 #include<iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
-constexpr int new_sz() {
+constexpr int new_sz()
+{
     return 42;
 }
 
-constexpr size_t scale(size_t cnt) {
+constexpr size_t scale(size_t cnt)
+{
     return new_sz() * cnt;
 }
 
